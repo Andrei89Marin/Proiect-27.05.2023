@@ -39,7 +39,7 @@ class Login(unittest.TestCase):
         expected = "Login Page"
         self.assertEqual(actual, expected, "Titulul de pe pagina este diferit de ceea ce ne asteptam")
 
-    def test_verificare_test(self):
+    def test_verificare_text(self):
         actual = self.chrome.find_element(By.XPATH, "//h2").text
         expected = "Login Page"
         self.assertEqual(actual, expected, "Textul afisat nu e corect")
@@ -59,7 +59,7 @@ class Login(unittest.TestCase):
         actual = self.chrome.find_element(By.XPATH, '//div[@class="flash error"]')
         self.assertTrue(actual.is_displayed(), "Mesajul de eroare NU este afisat")
 
-    def test_verificare_measaj_eroare(self):
+    def test_verificare_mesaj_eroare(self):
         self.login_click('alabala', 'alabala')
         actual = self.chrome.find_element(By.XPATH, '//div[@class="flash error"]').text
         expected = 'Your username is invalid!'
